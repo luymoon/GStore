@@ -1,6 +1,5 @@
 using System.Net.Mail;
 using System.Security.Claims;
-using System.Security.Cryptography.X509Certificates;
 using GStore.Models;
 using GStore.ViewModels;
 using Microsoft.AspNetCore.Identity;
@@ -87,6 +86,13 @@ public class AccountController : Controller
         _logger.LogInformation($"Usuário {ClaimTypes.Email} fez logoff");
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
+    }
+
+    [HttpGet]
+    public IActionResult Registro()
+    {
+        RegistroVM register = new();
+        return View(register);
     }
 
     public bool IsValidEmail(string email)
