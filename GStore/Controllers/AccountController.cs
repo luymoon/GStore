@@ -134,11 +134,9 @@ public class AccountController : Controller
         return View(registro);
     }
 
-    [HttpGet]
-    public IActionResult Registro()
+    public IActionResult AccessDenied()
     {
-        RegistroVM register = new();
-        return View(register);
+        return View();
     }
 
     public bool IsValidEmail(string email)
