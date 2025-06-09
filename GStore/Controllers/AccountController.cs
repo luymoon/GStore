@@ -15,6 +15,7 @@ public class AccountController : Controller
     private readonly UserManager<Usuario> _userManager;
     private readonly IWebHostEnvironment _host;
     private readonly AppDbContext _db;
+    
     public AccountController(
         ILogger<AccountController> logger,
         SignInManager<Usuario> signInManager,
@@ -90,6 +91,13 @@ public class AccountController : Controller
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
+
+    [HttpGet]
+    public IActionResult Registro()
+    {
+        return View();
+    }
+
 
     [HttpPost]
     [ValidateAntiForgeryToken]
