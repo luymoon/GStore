@@ -22,3 +22,11 @@ Configurar a connectionstring no arquivo appsettings.json
 Configurar os serviços de Contexto e Identidade no Program.cs
 
 
+
+dotnet aspnet-codegenerator controller -name CategoriasController --model Categoria --dataContext AppDbContext --layout "~/Views/Shared/_LayoutAdmin.cshtml" -outDir Controllers
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 9.0.0
+
+dotnet aspnet-codegenerator controller -name ProdutosController --model Produto --dataContext AppDbContext --layout "~/Views/Shared/_LayoutAdmin.cshtml" -outDir Controllers
+>> Um para cada coisa que tiver que cadastrar (menos muitos para muitos)
+
